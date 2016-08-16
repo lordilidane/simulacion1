@@ -29,11 +29,12 @@ carasDado1 = 8
 carasDado2 = 13
 
 def combinaciones(dado1,dado2):
-    aux =0
+    aux
     for x in range(1,dado1):
         for y in range(1,dado2):
-            print(x+y)
-                    
+            aux2 = x+y
+            aux.append(aux2)
+    print(aux)
     
 #print grades_variance(grades, grades_promedio(grades))
 
