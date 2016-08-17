@@ -1,41 +1,44 @@
-def print_grades(grades):
-    for grade in grades:
-        print grade
+def imprimir(vector):
+    for x in vector:
+        print x
 
-def grades_sum(grades):
+def sumar(vector):
     total = 0
-    for grad in grades:
-        print(grad)
-        total += grad
+    for x in vector:
+        
+        total += x
     return total
     
-def grades_promedio(grades):
-    sum_of_grades = grades_sum(grades)
-    average = float(sum_of_grades) / len(grades)
-    return average
+def promedio(vector):
+    sum_vector = sumar(vector)
+    promedio = float(sum_vector) / len(vector)
+    return promedio
 
 # Para calcular la varianza restamos a cada puntancion la media y 
 # los sumamos, lo elevamos al cuadrado y lo divimos entre 2
-def grades_variance(scores, average):
+def varianaza(scores, promedio):
     sumatorio = 0
     for data in scores:
-        sumatorio += (average - float(data))**2
-    variance = float(sumatorio)/len(grades)
+        sumatorio += (promedio - float(data))**2
+    variance = float(sumatorio)/len(scores)
     return variance
 
-grades = [100, 100, 90, 40, 80, 100, 85, 70, 90, 65, 90, 85, 50.5]
 
+
+def combinaciones(dado1,dado2):
+    aux = []
+    for x in range(1,dado1):
+        for y in range(1,dado2):
+            aux.append(x+y)
+    #print(aux)
+    return aux
+                    
 carasDado1 = 8
 carasDado2 = 13
 
-def combinaciones(dado1,dado2):
-    aux
-    for x in range(1,dado1):
-        for y in range(1,dado2):
-            aux2 = x+y
-            aux.append(aux2)
-    print(aux)
-    
-#print grades_variance(grades, grades_promedio(grades))
-
-print(combinaciones(carasDado1,carasDado2))
+aux = combinaciones(carasDado1,carasDado2)
+promedio = promedio(aux)
+print('mediana')
+print(promedio)
+print('varianza')
+print(varianaza(aux,promedio))
